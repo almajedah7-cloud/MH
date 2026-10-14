@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منصة قياس الأثر – الثانوية الثامنة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eef3f2;--card:#fff;--ink:#12302e;--mut:#5b7270;--line:#cfdcda;--pri:#0e6b66;--dk:#0b3b3a;--acc:#b8913a;--soft:#e4f0ee;--inp:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a19;--card:#142625;--ink:#e6f1ef;--mut:#9bb5b2;--line:#2b4543;--pri:#3bb5ac;--dk:#0b3b3a;--acc:#d9b45e;--soft:#1b3330;--inp:#0f1f1e}}
+:root[data-theme="dark"]{--bg:#0d1a19;--card:#142625;--ink:#e6f1ef;--mut:#9bb5b2;--line:#2b4543;--pri:#3bb5ac;--dk:#0b3b3a;--acc:#d9b45e;--soft:#1b3330;--inp:#0f1f1e}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',Tahoma,Arial,sans-serif;line-height:1.7}
+.wrap{max-width:900px;margin:0 auto;padding:12px}
+header{background:var(--dk);color:#fff;border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:5px solid var(--acc)}
+header .logo{background:#fff;border-radius:10px;padding:6px 10px}
+header img{height:70px;display:block;max-width:100%}
+header .t{flex:1;min-width:200px}
+header .t small{opacity:.85;display:block;font-size:13px}
+header h1{margin:2px 0 0;font-size:26px;font-weight:800}
+header .school{text-align:left;font-size:14px;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden}
+.card>h2{margin:0;padding:8px 16px;background:var(--pri);color:#fff;font-size:17px;font-weight:700}
+.body{padding:14px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+label{font-size:13px;color:var(--mut);font-weight:600;display:block}
+input,textarea,select{width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--inp);border:1px solid var(--line);border-radius:8px;padding:6px 9px}
+textarea{min-height:70px;resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th{background:var(--soft);font-size:13px;padding:6px;border:1px solid var(--line)}
+td{border:1px solid var(--line);padding:3px}
+td.r{text-align:center;font-weight:700;background:var(--soft)}
+td input{border:0;background:transparent;text-align:center}
+tfoot td{background:var(--soft);font-weight:700;text-align:center;padding:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.k{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;background:var(--soft)}
+.k b{display:block;font-size:28px;color:var(--pri);line-height:1.2}
+.k span{font-size:13px;color:var(--mut)}
+.chk{display:flex;flex-wrap:wrap;gap:6px 18px}
+.chk label{display:flex;align-items:center;gap:6px;color:var(--ink);font-size:14px}
+.chk input{width:auto}
+.ax{display:grid;grid-template-columns:1fr 200px;gap:8px 12px;align-items:center}
+@media(max-width:560px){.ax{grid-template-columns:1fr}}
+.ax div{font-weight:600;font-size:14px}
+svg text{font-family:'Cairo',Tahoma,sans-serif;fill:var(--ink)}
+.lg{display:flex;gap:16px;font-size:13px;margin-top:4px}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:5px;vertical-align:middle}
+#auto li{margin-bottom:5px}
+.bar{display:flex;gap:10px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:10px 22px;cursor:pointer;background:var(--pri);color:#fff}
+button.s{background:var(--acc);color:#2a2008}
+.sign{display:flex;justify-content:space-around;gap:20px;text-align:center;padding:18px 10px 6px;font-weight:600;flex-wrap:wrap}
+.sign div{min-width:200px;border-top:1px dashed var(--mut);padding-top:6px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 0 16px}
+.ph img{height:90px;border-radius:8px;margin:4px;border:1px solid var(--line)}.qr{background:#fff;display:inline-block;padding:6px;border-radius:6px;min-height:20px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.ctl button{background:var(--soft);color:var(--ink);padding:6px 14px;border:1px solid var(--line)}.ctl button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.rings{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:8px 0}.rings figure{margin:0;text-align:center;font-size:12px;width:120px}
+.an .bx{transform-box:fill-box;transform-origin:50% 100%;animation:gr .9s cubic-bezier(.2,.8,.2,1) both}
+.an .hx{transform-box:fill-box;transform-origin:100% 50%;animation:gx .9s cubic-bezier(.2,.8,.2,1) both}
+.an .ln{stroke-dasharray:1;animation:dr 1.4s ease-out both}
+.an .dt{transform-box:fill-box;transform-origin:center;animation:pop .5s ease-out both}
+.an .rg{animation:rg 1.3s ease-out both}
+@keyframes gr{from{transform:scaleY(0)}}@keyframes gx{from{transform:scaleX(0)}}@keyframes dr{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes pop{from{opacity:0;transform:scale(0)}}@keyframes rg{from{stroke-dasharray:0 100}}
+@media(prefers-reduced-motion:reduce){.an *{animation:none!important}}
+.note{font-size:12px;color:var(--mut);margin:6px 0 0}
+@page{size:A4;margin:10mm}
+@media print{
+:root{--bg:#fff;--card:#fff;--ink:#111;--mut:#444;--line:#999;--pri:#0e6b66;--soft:#e8f1f0;--inp:#fff;padding:0}
+body{background:#fff;font-size:12px}.wrap{max-width:none;padding:0}
+.noprint{display:none!important}
+header,.card>h2,th,.k,td.r,tfoot td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.card{break-inside:avoid;margin-top:8px}
+input,textarea,select{border:0;border-bottom:1px dotted #777;border-radius:0;padding:2px}
+select{appearance:none}
+.tw{overflow:visible}table{min-width:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><img src="data:image/webp;base64,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" alt="شعار وزارة التعليم"></div>
+  <div class="t"><small>المملكة العربية السعودية – وزارة التعليم</small><h1>منصة قياس الأثر</h1><small>نقيس لنطوّر… لنحقق أثرًا حقيقيًا</small></div>
+  <div class="school"><b>الثانوية الثامنة</b><br>مديرة المدرسة: ريم المالكي</div>
+</header>
+
+<datalist id="kl"><option value="نسبة حضور الطالبات"><option value="نسبة المشاركة في الأنشطة"><option value="عدد الطالبات المستفيدات"><option value="عدد الأنشطة المنفذة"><option value="مستوى التحصيل الدراسي"><option value="نسبة التحسن في الدرجات"><option value="نسبة رضا الطالبات"><option value="نسبة رضا أولياء الأمور"><option value="نسبة الاستفادة من البرنامج"><option value="مستوى اكتساب المهارة"><option value="مستوى الوعي والمعرفة"><option value="نسبة الالتزام والانضباط"><option value="نسبة الغياب"><option value="عدد المبادرات والشهادات"><option value="عدد الشواهد الموثقة"></datalist>
+<div class="card"><h2>بيانات البرنامج</h2><div class="body"><div class="grid">
+<div><label>اسم البرنامج / المبادرة</label><input></div>
+<div><label>تاريخ التنفيذ</label><input type="date"></div>
+<div><label>الجهة</label><input></div>
+<div><label>المستهدفون</label><input></div>
+</div></div></div>
+
+<div class="card"><h2>١. الهدف من البرنامج أو المبادرة</h2><div class="body"><label>ماذا أردنا أن نحقق؟</label><textarea></textarea></div></div>
+
+<div class="card"><h2>٢. مؤشرات القياس (KPIs)</h2><div class="body tw"><table id="kt">
+<thead><tr><th>م</th><th>مؤشر القياس</th><th title="الرقم الذي خططتِ لتحقيقه">المستهدف</th><th title="الرقم الذي تحقق فعلًا">النتيجة الفعلية</th><th>نسبة الإنجاز</th></tr></thead><tbody></tbody>
+<tfoot><tr><td colspan="2">المجموع / المتوسط</td><td id="kst">–</td><td id="ksa">–</td><td id="kavg">–</td></tr></tfoot></table>
+<p class="noprint" style="margin:8px 0 0"><button class="s" onclick="addK()">+ إضافة مؤشر</button></p>
+<p class="note"><b>المستهدف</b> = الرقم الذي خططتِ للوصول إليه. <b>النتيجة الفعلية</b> = الرقم الذي تحقق فعلًا. <b>نسبة الإنجاز</b> = الفعلية ÷ المستهدف × ١٠٠. مثال: المستهدف ٥٠ طالبة، والحاضرات ٤٠ ← الإنجاز ٨٠٪.</p></div></div>
+
+<div class="card"><h2>٣. أدوات جمع البيانات</h2><div class="body chk">
+<label><input type="checkbox">نتائج اختبارات</label><label><input type="checkbox">استبانات</label><label><input type="checkbox">ملاحظات</label><label><input type="checkbox">أعمال ونماذج الطالبات</label><label><input type="checkbox">مقارنات قبل وبعد</label><label><input type="checkbox">سجلات متابعة</label><label><input type="checkbox">شهادات وملاحظات أولياء الأمور</label><label><input type="checkbox">صور وفيديوهات</label><label>أخرى: <input style="width:140px"></label>
+</div></div>
+
+<div class="card"><h2>٤. المقارنة قبل وبعد</h2><div class="body tw"><table id="bt">
+<thead><tr><th>م</th><th>المؤشر</th><th>قبل التنفيذ</th><th>بعد التنفيذ</th><th>مقدار التغير</th><th>نسبة التغير</th></tr></thead><tbody></tbody>
+<tfoot><tr><td colspan="2">المجموع / المتوسط</td><td id="bs0">–</td><td id="bs1">–</td><td></td><td id="bavg">–</td></tr></tfoot></table>
+<p class="noprint" style="margin:8px 0 0"><button class="s" onclick="addB()">+ إضافة مؤشر</button></p>
+<p class="note">الزيادة تُحتسب تحسنًا؛ وللمؤشر العكسي (مثل الغياب) تدل النسبة السالبة على التحسن.</p></div></div>
+
+<div class="card"><h2>٥. الرسوم البيانية المتحركة</h2><div class="body">
+<div class="ctl noprint" id="ctl"><span style="align-self:center;font-weight:600">اختاري شكل الرسم:</span><button class="on" data-t="bar">أعمدة</button><button data-t="hbar">أشرطة أفقية</button><button data-t="line">خطي</button><button data-t="ring">حلقات</button><button id="replay" style="background:var(--acc);color:#2a2008;border-color:var(--acc)">▶ إعادة التحريك</button></div>
+<b>الرسم الأول: نسبة الإنجاز للمؤشرات (المستهدف = 100%)</b><div id="c1"></div>
+<b>الرسم الثاني: مقارنة قبل / بعد التنفيذ</b><div id="c2"></div>
+<div class="lg"><span><i style="background:#9bb0ae"></i>قبل</span><span><i style="background:#0e6b66"></i>بعد</span></div></div></div>
+
+<div class="card"><h2>٦. تحليل الأثر</h2><div class="body"><div class="cards" style="margin-bottom:12px">
+<div class="k"><b id="s1">–</b><span>متوسط الإنجاز</span></div><div class="k"><b id="s2">–</b><span>متوسط التغير</span></div><div class="k"><b id="s4" style="font-size:20px;padding:6px 0">–</b><span>مستوى الأثر العام</span></div></div>
+<div class="grid">
+<div><label>الأثر الكمي (أرقام وبيانات)</label><textarea></textarea></div>
+<div><label>الأثر النوعي (ملاحظات وانطباعات)</label><textarea></textarea></div>
+</div></div></div>
+
+<div class="card"><h2>٧. التوصيات والمقترحات</h2><div class="body">
+<b>توصيات مقترحة تلقائيًا من نتائجك</b><ul id="auto"></ul>
+<div class="grid"><div><label>المقترحات</label><textarea></textarea></div>
+<div><label>التوصيات</label><textarea></textarea></div></div></div></div>
+
+<div class="card"><h2>٨. الشواهد والتوثيق</h2><div class="body">
+<div class="noprint"><label>صور (حتى ٦ صور)</label><input id="pf" type="file" accept="image/*" multiple></div>
+<div class="ph" id="ph"></div>
+<div class="grid" style="margin-top:10px"><div><label>رابط (مجلد الشواهد أو الفيديو)</label><input id="lk" type="url" dir="ltr" placeholder="https://"></div>
+<div><label>التقرير (اسم التقرير أو ملخصه)</label><textarea style="min-height:48px"></textarea></div></div>
+<div style="margin-top:10px"><label>الباركود (يُنشأ تلقائيًا من الرابط)</label><div id="qr" class="qr"></div></div>
+<div class="sign"><div>معدّة ومصمّمة النموذج<br>ماجدة الزهراني</div><div>مديرة المدرسة<br>ريم المالكي</div></div>
+</div></div>
+
+<div class="bar noprint"><button onclick="window.print()">طباعة / حفظ PDF</button><button class="s" onclick="if(confirm('مسح كل البيانات؟'))location.reload()">نموذج جديد</button></div>
+<p class="note noprint" style="text-align:center">للحفظ كملف PDF: اضغطي «طباعة» ثم اختاري «حفظ بصيغة PDF» كوجهة الطباعة. إن لم تفتح نافذة الطباعة فافتحي الرابط في المتصفح مباشرة.</p>
+<footer>الثانوية الثامنة – إعداد وتصميم: ماجدة الزهراني – تحت إشراف مديرة المدرسة ريم المالكي</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),N=v=>v===''||isNaN(+v)?null:+v,f=n=>n==null?'–':(Math.round(n*10)/10)+'%';
+let kc=0,bc=0;
+function addK(){kc++;$('#kt tbody').insertAdjacentHTML('beforeend',`<tr><td class="r">${kc}</td><td><input class="kn" list="kl" placeholder="اختاري من القائمة أو اكتبي"></td><td><input class="kt" type="number"></td><td><input class="ka" type="number"></td><td class="r kp">%</td></tr>`);calc()}
+function addB(){bc++;$('#bt tbody').insertAdjacentHTML('beforeend',`<tr><td class="r">${bc}</td><td><input class="bn" list="kl" placeholder="اختاري من القائمة أو اكتبي"></td><td><input class="b0" type="number"></td><td><input class="b1" type="number"></td><td class="r bd">–</td><td class="r bp">%</td></tr>`);calc()}
+$('#pf').onchange=e=>{$('#ph').innerHTML='';[...e.target.files].slice(0,6).forEach(fl=>{const r=new FileReader();r.onload=()=>$('#ph').insertAdjacentHTML('beforeend','<img src="'+r.result+'" alt="">');r.readAsDataURL(fl)})};
+$('#lk').addEventListener('input',()=>{const q=$('#qr'),v=$('#lk').value.trim();q.innerHTML='';if(v&&typeof QRCode!=='undefined')new QRCode(q,{text:v,width:110,height:110})});
+const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+let CT='bar',AN=true;
+function bars(el,labels,series,max){
+const n=labels.length,W=720,H=240,sh=t=>t.length>16?t.slice(0,15)+'…':t,A=AN?' an':'';
+if(CT==='ring'){const R=[44,30];
+el.innerHTML='<div class="rings'+A+'">'+labels.map((lb,i)=>{let c='<svg viewBox="0 0 110 110" width="110" height="110">';
+series.forEach((se,j)=>{const v=se.v[i];c+=`<circle cx="55" cy="55" r="${R[j]}" fill="none" stroke="var(--line)" stroke-width="10"/>`;
+if(v!=null){const p=Math.max(0,Math.min(v/max*100,100));c+=`<circle class="rg" cx="55" cy="55" r="${R[j]}" fill="none" stroke="${se.c}" stroke-width="10" stroke-linecap="round" pathLength="100" stroke-dasharray="${p} 100" transform="rotate(-90 55 55)"/>`}});
+const v0=series[series.length-1].v[i];
+return `<figure class="${A}">${c}<text x="55" y="60" font-size="14" font-weight="700" text-anchor="middle">${v0==null?'–':Math.round(v0)}</text></svg><div>${sh(lb)}</div></figure>`}).join('')+'</div>';return}
+if(CT==='hbar'){const rh=series.length*17+16,Ht=n*rh+10,X0=W-150,len=X0-50;
+let s=`<svg class="${A}" viewBox="0 0 ${W} ${Ht}" width="100%" role="img">`;
+labels.forEach((lb,i)=>{const y=i*rh+6;s+=`<text x="${W-6}" y="${y+series.length*8+8}" font-size="12" text-anchor="end">${sh(lb)}</text>`;
+series.forEach((se,j)=>{const v=se.v[i];if(v==null)return;const w=Math.max(0,Math.min(v,max))/max*len,yy=y+j*17;
+s+=`<rect class="hx" style="animation-delay:${i*.08}s" x="${X0-w}" y="${yy}" width="${w}" height="14" rx="4" fill="${se.c}"/><text x="${X0-w-5}" y="${yy+12}" font-size="11" text-anchor="end">${Math.round(v)}</text>`})});
+el.innerHTML=s+'</svg>';return}
+const L=34,B=34,g=(W-L)/n,Y=v=>H-B-Math.max(0,Math.min(v,max))/max*(H-B-14),bw=Math.min(46,(g-14)/series.length);
+let s=`<svg class="${A}" viewBox="0 0 ${W} ${H}" width="100%" role="img">`;
+for(let t=0;t<=4;t++){const y=H-B-(H-B-14)*t/4;s+=`<line x1="${L}" x2="${W}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="${L-5}" y="${y+4}" font-size="11" text-anchor="end">${Math.round(max*t/4)}</text>`}
+if(CT==='line'){series.forEach(se=>{let d='';se.v.forEach((v,i)=>{if(v!=null)d+=(d?'L':'M')+(L+g*i+g/2)+' '+Y(v)});
+if(d)s+=`<path class="ln" pathLength="1" d="${d}" fill="none" stroke="${se.c}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
+se.v.forEach((v,i)=>{if(v==null)return;const x=L+g*i+g/2;s+=`<circle class="dt" style="animation-delay:${.6+i*.12}s" cx="${x}" cy="${Y(v)}" r="5" fill="${se.c}"/><text x="${x}" y="${Y(v)-10}" font-size="11" text-anchor="middle">${Math.round(v)}</text>`})})}
+else labels.forEach((lb,i)=>{const cx=L+g*i+g/2;series.forEach((se,j)=>{const v=se.v[i];if(v==null)return;const h=H-B-Y(v),x=cx-bw*series.length/2+bw*j;
+s+=`<rect class="bx" style="animation-delay:${i*.08}s" x="${x}" y="${Y(v)}" width="${bw-3}" height="${h}" rx="3" fill="${se.c}"/><text x="${x+(bw-3)/2}" y="${Y(v)-4}" font-size="11" text-anchor="middle">${Math.round(v)}</text>`})});
+labels.forEach((lb,i)=>s+=`<text x="${L+g*i+g/2}" y="${H-12}" font-size="11" text-anchor="middle">${sh(lb)}</text>`);
+el.innerHTML=s+'</svg>'}
+function calc(){
+const kn=[...document.querySelectorAll('.kn')],kt=[...document.querySelectorAll('.kt')],ka=[...document.querySelectorAll('.ka')],kp=[...document.querySelectorAll('.kp')];
+const kv=[],kl=[];
+kn.forEach((_,i)=>{const t=N(kt[i].value),a=N(ka[i].value);const p=t&&a!=null?a/t*100:null;kp[i].textContent=f(p);kv.push(p);kl.push(kn[i].value||'مؤشر '+(i+1))});
+const sm=a=>{const v=a.map(x=>N(x.value)).filter(x=>x!=null);return v.length?Math.round(v.reduce((x,y)=>x+y,0)*100)/100:'–'};$('#kst').textContent=sm(kt);$('#ksa').textContent=sm(ka);
+const kA=avg(kv.filter(v=>v!=null));$('#kavg').textContent=f(kA);
+const bn=[...document.querySelectorAll('.bn')],b0=[...document.querySelectorAll('.b0')],b1=[...document.querySelectorAll('.b1')],bd=[...document.querySelectorAll('.bd')],bp=[...document.querySelectorAll('.bp')];
+const bpv=[],B0=[],B1=[],bl=[];
+bn.forEach((_,i)=>{const x=N(b0[i].value),y=N(b1[i].value);const d=x!=null&&y!=null?Math.round((y-x)*100)/100:null;const p=d!=null&&x?d/x*100:null;bd[i].textContent=d==null?'–':d;bp[i].textContent=f(p);bpv.push(p);B0.push(x);B1.push(y);bl.push(bn[i].value||'مؤشر '+(i+1))});
+const bA=avg(bpv.filter(v=>v!=null));$('#bs0').textContent=sm(b0);$('#bs1').textContent=sm(b1);$('#bavg').textContent=f(bA);
+bars($('#c1'),kl,[{v:kv,c:'#0e6b66'}],Math.max(100,...kv.filter(v=>v!=null)));
+bars($('#c2'),bl,[{v:B0,c:'#9bb0ae'},{v:B1,c:'#0e6b66'}],Math.max(10,...B0.concat(B1).filter(v=>v!=null)));
+AN=false;$('#s1').textContent=f(kA);$('#s2').textContent=f(bA);
+$('#s4').textContent=kA==null?'–':kA>=90?'أثر ممتاز':kA>=75?'أثر كبير':kA>=60?'أثر متوسط':'يحتاج تطويرًا';
+const r=[];
+if(kA!=null){const ok=kv.filter(v=>v!=null),mi=kv.indexOf(Math.min(...ok));
+r.push(kA>=90?'نسب الإنجاز مرتفعة؛ يوصى بتوثيق التجربة وتعميمها على برامج مماثلة في المدرسة.':kA>=60?'الإنجاز مقبول؛ يوصى بمراجعة خطة التنفيذ ومعالجة المؤشرات الأقل من المستهدف.':'الإنجاز دون المستهدف؛ يوصى بإعادة تصميم الأنشطة وتحديد أسباب التعثر قبل تكرار البرنامج.');
+if(kv[mi]<90)r.push(`أضعف مؤشر إنجازًا: «${kl[mi]}» (${f(kv[mi])}) — يقترح وضع خطة تحسين مستقلة له.`)}
+if(bA!=null)r.push(bA>0?`ظهر تغير إيجابي بمتوسط ${f(bA)} بعد التنفيذ؛ يقترح الاستمرار في الأنشطة الأعلى تأثيرًا.`:'لم يظهر تغير إيجابي واضح بين القياسين؛ يقترح مراجعة مدة البرنامج وأدوات القياس.');
+if(!r.length)r.push('أدخلي بيانات المؤشرات والمقارنة لتظهر التوصيات المقترحة هنا.');
+r.push('يقترح تكرار القياس في نهاية كل فصل دراسي لمتابعة استدامة الأثر، وإرفاق الشواهد بكل مؤشر.');
+$('#auto').innerHTML=r.map(t=>`<li>${t}</li>`).join('')}
+for(let i=0;i<5;i++){addK();addB()}
+document.querySelectorAll('#ctl button[data-t]').forEach(b=>b.onclick=()=>{CT=b.dataset.t;document.querySelectorAll('#ctl button[data-t]').forEach(x=>x.classList.toggle('on',x===b));AN=true;calc()});
+$('#replay').onclick=()=>{AN=true;calc()};
+document.addEventListener('input',calc);document.addEventListener('change',calc);calc();
+</script>
+</body>
+</html>
